@@ -1,4 +1,4 @@
-# Cycles - Laravel E-commerce Website
+#  Laravel E-commerce Website
 
 A complete Laravel-based e-commerce website for Cycles, a bicycle store located in Aland, Karnataka, India. This project includes both an admin panel and a public website with full CRUD functionality.
 
