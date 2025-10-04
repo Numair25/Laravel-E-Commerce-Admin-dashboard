@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 # Products - Laravel E-commerce Website
+=======
+#  Laravel E-commerce Website
+>>>>>>> a4d2a67371b7cea97ac52d5625cf576a8817091f
 
 A complete Laravel-based e-commerce website for Products, a bicycle store located in Gulbarga, Karnataka, India. This project includes both an admin panel and a public website with full CRUD functionality.
 

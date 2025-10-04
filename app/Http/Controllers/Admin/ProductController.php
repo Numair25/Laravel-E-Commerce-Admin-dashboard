@@ -149,7 +149,7 @@ class ProductController extends Controller
         try {
             $media = \Spatie\MediaLibrary\MediaCollections\Models\Media::findOrFail($mediaId);
             $media->delete();
-            
+
             return response()->json(['success' => true]);
         } catch (\Exception $e) {
             return response()->json(['success' => false, 'message' => 'Error deleting media']);

@@ -20,7 +20,7 @@ class SitemapController extends Controller
     $categories = Category::all();
 
     $content = view('sitemap.index', compact('products', 'categories'));
-        
+
         return response($content, 200)
             ->header('Content-Type', 'text/xml');
     }

@@ -137,4 +137,4 @@
             @endif
         </div>
     </div>
-</x-frontend-layout> 
+</x-frontend-layout>

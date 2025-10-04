@@ -7,21 +7,21 @@
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
     </url>
-    
+
     <url>
         <loc>{{ route('products.index') }}</loc>
         <lastmod>{{ now()->toISOString() }}</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.9</priority>
     </url>
-    
+
     <url>
         <loc>{{ route('about.index') }}</loc>
         <lastmod>{{ now()->toISOString() }}</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
-    
+
     <url>
         <loc>{{ route('contact.index') }}</loc>
         <lastmod>{{ now()->toISOString() }}</lastmod>
@@ -48,4 +48,4 @@
             <priority>0.6</priority>
         </url>
     @endforeach
-</urlset> 
+</urlset>

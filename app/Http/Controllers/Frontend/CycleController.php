@@ -8,7 +8,7 @@ use App\Models\Product;
 use Illuminate\Http\Request;
 use Illuminate\View\View;
 
-class ProductController extends Controller
+class CycleController extends Controller
 {
     public function index(Request $request): View
     {
@@ -67,14 +67,14 @@ class ProductController extends Controller
                 break;
         }
 
-        $products = $query->paginate(12)->withQueryString();
+    $products = $query->paginate(12)->withQueryString();
 
         // Get filter options
         $categories = Category::all();
-        $brands = Product::where('is_published', true)->distinct()->pluck('brand');
+    $brands = Product::where('is_published', true)->distinct()->pluck('brand');
         $types = ['Gear', 'Non-Gear', 'Electric', 'Kids'];
 
-        return view('frontend.products.index', compact('products', 'categories', 'brands', 'types'));
+    return view('frontend.products.index', compact('products', 'categories', 'brands', 'types'));
     }
 
     public function show(Product $product): View
