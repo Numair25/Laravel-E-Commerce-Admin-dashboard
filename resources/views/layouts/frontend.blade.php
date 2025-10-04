@@ -5,20 +5,20 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="csrf-token" content="{{ csrf_token() }}">
 
-        <title>@yield('title', 'E-commerce - Premium Cycles & Fashions in Aland, Karnataka')</title>
-        <meta name="description" content="@yield('description', 'Discover premium cycles and readymade fashions at E-commerce in Aland, Karnataka. We offer a wide range of cycles and clothes for all ages.')">
+        <title>@yield('title', 'E-commerce - Premium Cycles & Fashions in Gulbarga, Karnataka')</title>
+        <meta name="description" content="@yield('description', 'Discover premium cycles and readymade fashions at E-commerce in Gulbarga, Karnataka. We offer a wide range of cycles and clothes for all ages.')">
 
         <!-- Open Graph Meta Tags -->
-        <meta property="og:title" content="@yield('og_title', 'E-commerce - Premium Cycles & Fashions in Aland, Karnataka')">
-        <meta property="og:description" content="@yield('og_description', 'Discover premium cycles and readymade fashions at E-commerce in Aland, Karnataka. We offer a wide range of cycles and clothes for all ages.')">
+        <meta property="og:title" content="@yield('og_title', 'E-commerce - Premium Cycles & Fashions in Gulbarga, Karnataka')">
+        <meta property="og:description" content="@yield('og_description', 'Discover premium cycles and readymade fashions at E-commerce in Gulbarga, Karnataka. We offer a wide range of cycles and clothes for all ages.')">
         <meta property="og:type" content="website">
         <meta property="og:url" content="{{ request()->url() }}">
         <meta property="og:image" content="@yield('og_image', asset('images/max-cycles-og.jpg'))">
 
         <!-- Twitter Card Meta Tags -->
         <meta name="twitter:card" content="summary_large_image">
-        <meta name="twitter:title" content="@yield('twitter_title', 'E-commerce - Premium Cycles & Fashions in Aland, Karnataka')">
-        <meta name="twitter:description" content="@yield('twitter_description', 'Discover premium cycles and readymade fashions at E-commerce in Aland, Karnataka.')">
+        <meta name="twitter:title" content="@yield('twitter_title', 'E-commerce - Premium Cycles & Fashions in Gulbarga, Karnataka')">
+        <meta name="twitter:description" content="@yield('twitter_description', 'Discover premium cycles and readymade fashions at E-commerce in Gulbarga, Karnataka.')">
         <meta name="twitter:image" content="@yield('twitter_image', asset('images/max-cycles-og.jpg'))">
 
         <!-- Fonts -->
@@ -126,10 +126,10 @@
                         <div class="col-span-1 md:col-span-2">
                             <h3 class="text-white text-lg font-semibold mb-4">E-commerce</h3>
                             <p class="text-gray-300 mb-4">
-                                Your trusted partner for premium cycles and readymade fashions in Aland, Karnataka. We offer a wide range of cycles and clothes for all ages.
+                                Your trusted partner for premium cycles and readymade fashions in Gulbarga, Karnataka. We offer a wide range of cycles and clothes for all ages.
                             </p>
                             <div class="text-gray-300">
-                                <p><strong>Address:</strong> Aland, Karnataka, India</p>
+                                <p><strong>Address:</strong> Gulbarga, Karnataka, India</p>
                                 <p><strong>Phone:</strong> +91 XXXXXXXXXX</p>
                                 <p><strong>Email:</strong> info@maxstyles.com</p>
                             </div>

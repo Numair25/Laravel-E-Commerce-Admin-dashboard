@@ -208,6 +208,6 @@
                 </form>
             </div>
         </div>
-        <div class="text-center text-gray-500 py-4 border-t border-gray-800">© {{ date('Y') }} E-commerce. All rights reserved. Aland, Karnataka, India.</div>
+        <div class="text-center text-gray-500 py-4 border-t border-gray-800">© {{ date('Y') }} E-commerce. All rights reserved. Gulbarga, Karnataka, India.</div>
     </footer>
 </x-frontend-layout>

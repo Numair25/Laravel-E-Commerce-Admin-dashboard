@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <title>@yield('title', 'E-commerce - Premium Cycles & Fashions in Aland, Karnataka')</title>
+    <title>@yield('title', 'E-commerce - Premium Cycles & Fashions in Gulbarga, Karnataka')</title>
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 <body class="font-sans antialiased bg-gray-950 text-gray-100">
@@ -73,7 +73,7 @@
             <div class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:py-16 lg:px-8">
                 <span class="text-2xl font-bold text-white">E-commerce</span>
                 <p class="text-gray-400 text-base">
-                    &copy; {{ date('Y') }} E-commerce. All rights reserved. Aland, Karnataka, India.
+                    &copy; {{ date('Y') }} E-commerce. All rights reserved. Gulbarga, Karnataka, India.
                 </p>
             </div>
         </footer>

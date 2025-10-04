@@ -1,6 +1,6 @@
 # Cycles - Laravel E-commerce Website
 
-A complete Laravel-based e-commerce website for Cycles, a bicycle store located in Aland, Karnataka, India. This project includes both an admin panel and a public website with full CRUD functionality.
+A complete Laravel-based e-commerce website for Cycles, a bicycle store located in Gulbarga, Karnataka, India. This project includes both an admin panel and a public website with full CRUD functionality.
 
 ## Features
 
@@ -198,7 +198,7 @@ DB_PASSWORD=your_password
 For support and questions:
 - Email: support@maxcycles.com
 - Phone: +91 XXXXXXXXXX
-- Address: Aland, Karnataka, India
+- Address: Gulbarga, Karnataka, India
 
 ## License
 
@@ -210,4 +210,4 @@ This is a private project for Cycles. For any modifications or customizations, p
 
 ---
 
-**Cycles** - Your trusted partner for premium bicycles in Aland, Karnataka.
+**Cycles** - Your trusted partner for premium bicycles in Gulbarga, Karnataka.

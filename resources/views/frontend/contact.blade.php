@@ -1,6 +1,6 @@
 <x-frontend-layout>
     @section('title', 'Contact Us - E-commerce')
-    @section('description', 'Get in touch with E-commerce in Aland, Karnataka. We are here to help you find the perfect cycle or fashion for your needs.')
+    @section('description', 'Get in touch with E-commerce in Gulbarga, Karnataka. We are here to help you find the perfect cycle or fashion for your needs.')
 
     <div class="bg-white">
         <div class="max-w-7xl mx-auto py-16 px-4 sm:py-24 sm:px-6 lg:px-8">
@@ -11,7 +11,7 @@
                     </h2>
                     <div class="mt-3">
                         <p class="text-lg text-gray-500">
-                            Get in touch with us for any inquiries about our cycles, services, or to schedule a visit to our store in Aland, Karnataka.
+                            Get in touch with us for any inquiries about our cycles, services, or to schedule a visit to our store in Gulbarga, Karnataka.
                         </p>
                     </div>
                     <div class="mt-8">
@@ -44,7 +44,7 @@
                                 </svg>
                             </div>
                             <div class="ml-3 text-base text-gray-500">
-                                <p>Aland, Karnataka, India</p>
+                                <p>Gulbarga, Karnataka, India</p>
                                 <p class="mt-1">Visit our store to see our complete collection</p>
                             </div>
                         </div>
@@ -135,7 +135,7 @@
                             </svg>
                         </div>
                         <h3 class="text-lg font-medium text-gray-900 mb-2">E-commerce Store</h3>
-                        <p class="text-gray-500 mb-4">Aland, Karnataka, India</p>
+                        <p class="text-gray-500 mb-4">Gulbarga, Karnataka, India</p>
                         <div class="text-sm text-gray-500">
                             <p><strong>Hours:</strong> Monday - Saturday: 9:00 AM - 7:00 PM</p>
                             <p><strong>Sunday:</strong> Closed</p>

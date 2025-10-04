@@ -1,6 +1,6 @@
 <x-frontend-layout>
     @section('title', 'About Us - E-commerce')
-    @section('description', 'Learn more about E-commerce, your trusted partner for premium cycles and readymade fashions in Aland, Karnataka. Discover our story, mission, and commitment to quality.')
+    @section('description', 'Learn more about E-commerce, your trusted partner for premium cycles and readymade fashions in Gulbarga, Karnataka. Discover our story, mission, and commitment to quality.')
 
     <div class="bg-white">
         <div class="max-w-7xl mx-auto py-16 px-4 sm:py-24 sm:px-6 lg:px-8">
@@ -9,7 +9,7 @@
                     About E-commerce
                 </h1>
                 <p class="mt-4 max-w-2xl text-xl text-gray-500 lg:mx-auto">
-                    Your trusted partner for premium cycles and readymade fashions in Aland, Karnataka
+                    Your trusted partner for premium cycles and readymade fashions in Gulbarga, Karnataka
                 </p>
             </div>
 
@@ -19,7 +19,7 @@
                         <h2 class="text-2xl font-bold text-gray-900 mb-6">Our Story</h2>
                         <div class="prose prose-lg text-gray-500">
                             <p class="mb-4">
-                                Founded with a passion for cycling and a commitment to quality, E-commerce has been serving the community of Aland, Karnataka, with premium cycles and exceptional service.
+                                Founded with a passion for cycling and a commitment to quality, E-commerce has been serving the community of Gulbarga, Karnataka, with premium cycles and exceptional service.
                             </p>
                             <p class="mb-4">
                                 We understand that choosing the right cycle is a personal decision that depends on various factors like age, purpose, terrain, and budget. That's why we offer a comprehensive range of cycles including gear, non-gear, electric, and kids cycles from trusted brands.
@@ -36,7 +36,7 @@
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
                                 </svg>
                                 <h3 class="text-lg font-medium text-gray-900 mb-2">E-commerce</h3>
-                                <p class="text-gray-600">Aland, Karnataka, India</p>
+                                <p class="text-gray-600">Gulbarga, Karnataka, India</p>
                             </div>
                         </div>
                     </div>
