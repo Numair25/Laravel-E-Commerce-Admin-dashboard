@@ -131,82 +131,78 @@ Optimized for performance and SEO — ideal for developers and businesses buildi
 
 ---
 
-### ⚡ Step-by-Step Installation
+## ⚡ Step-by-Step Installation
 
 1. **Clone the Repository**
-   ```bash
-   git clone https://github.com/Numair25/Laravel-E-Commerce-Admin-dashboard.git
-   cd Laravel-E-Commerce-Admin-dashboard
-````
+
+    ```bash
+    git clone https://github.com/Numair25/Laravel-E-Commerce-Admin-dashboard.git
+    cd Laravel-E-Commerce-Admin-dashboard
+    ```
 
 2. **Install Dependencies**
 
-   ```bash
-   composer install
-   npm install
-   ```
+    ```bash
+    composer install
+    npm install
+    ```
 
 3. **Configure Environment**
 
-   ```bash
-   cp .env.example .env
-   php artisan key:generate
-   ```
+    ```bash
+    cp .env.example .env
+    php artisan key:generate
+    ```
 
-   * Update your `.env` file:
+    Update your `.env` file:
 
-     ```
-     DB_CONNECTION=mysql
-     DB_HOST=127.0.0.1
-     DB_PORT=3306
-     DB_DATABASE=ecommerce
-     DB_USERNAME=root
-     DB_PASSWORD=
-     ```
+    ```
+    DB_CONNECTION=mysql
+    DB_HOST=127.0.0.1
+    DB_PORT=3306
+    DB_DATABASE=ecommerce
+    DB_USERNAME=root
+    DB_PASSWORD=
+    ```
 
 4. **Run Migrations and Seeders**
 
-   ```bash
-   php artisan migrate
-   php artisan db:seed
-   ```
+    ```bash
+    php artisan migrate
+    php artisan db:seed
+    ```
 
-   * Default Admin Account:
-
-     * **Email:** `admin@ecommerce.com`
-     * **Password:** `Admin@12345`
+    Default Admin Account:  
+    - **Email:** `admin@ecommerce.com`  
+    - **Password:** `Admin@12345`
 
 5. **Compile Assets**
 
-   ```bash
-   npm run dev
-   ```
+    ```bash
+    npm run dev
+    ```
 
-   For production:
+    For production:
 
-   ```bash
-   npm run build
-   ```
+    ```bash
+    npm run build
+    ```
 
 6. **Start the Server**
 
-   ```bash
-   php artisan serve
-   ```
+    ```bash
+    php artisan serve
+    ```
 
-   * Admin Panel: [http://localhost:8000/admin](http://localhost:8000/admin)
-   * Public Site: [http://localhost:8000](http://localhost:8000)
+    - Admin Panel: [http://localhost:8000/admin](http://localhost:8000/admin)  
+    - Public Site: [http://localhost:8000](http://localhost:8000)
 
 7. **Production Setup**
 
-   ```bash
-   php artisan config:cache
-   chmod -R 775 storage bootstrap/cache
-   ```
-
-   * Enable HTTPS
-   * Configure backups
-
+    ```bash
+    php artisan config:cache
+    chmod -R 775 storage bootstrap/cache
+    ```
 ---
 
 ### 🧩 Post-Installation Setup
