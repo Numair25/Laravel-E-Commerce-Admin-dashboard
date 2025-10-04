@@ -1,6 +1,6 @@
 <x-frontend-layout>
-    @section('title', 'Contact Us - Max Cycles')
-    @section('description', 'Get in touch with Max Cycles in Aland, Karnataka. We are here to help you find the perfect bicycle for your needs.')
+    @section('title', 'Contact Us - E-commerce')
+    @section('description', 'Get in touch with E-commerce in Aland, Karnataka. We are here to help you find the perfect cycle or fashion for your needs.')
 
     <div class="bg-white">
         <div class="max-w-7xl mx-auto py-16 px-4 sm:py-24 sm:px-6 lg:px-8">
@@ -33,7 +33,7 @@
                                 </svg>
                             </div>
                             <div class="ml-3 text-base text-gray-500">
-                                <p>info@maxcycles.com</p>
+                                <p>info@maxstyles.com</p>
                             </div>
                         </div>
                         <div class="mt-6 flex">
@@ -134,7 +134,7 @@
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                             </svg>
                         </div>
-                        <h3 class="text-lg font-medium text-gray-900 mb-2">Max Cycles Store</h3>
+                        <h3 class="text-lg font-medium text-gray-900 mb-2">E-commerce Store</h3>
                         <p class="text-gray-500 mb-4">Aland, Karnataka, India</p>
                         <div class="text-sm text-gray-500">
                             <p><strong>Hours:</strong> Monday - Saturday: 9:00 AM - 7:00 PM</p>
@@ -145,4 +145,4 @@
             </div>
         </div>
     </div>
-</x-frontend-layout> 
+</x-frontend-layout>

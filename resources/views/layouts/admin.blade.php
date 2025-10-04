@@ -24,7 +24,7 @@
                             <!-- Logo -->
                             <div class="shrink-0 flex items-center">
                                 <a href="{{ route('admin.dashboard') }}" class="text-xl font-bold text-gray-800">
-                                    Max Cycles Admin
+                                    Procusts Admin
                                 </a>
                             </div>
                         </div>
@@ -130,4 +130,4 @@
             </div>
         </div>
     </body>
-</html> 
+</html>

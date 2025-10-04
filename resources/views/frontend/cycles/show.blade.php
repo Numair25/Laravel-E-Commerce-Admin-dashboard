@@ -1,7 +1,7 @@
 <x-frontend-layout>
-    @section('title', $cycle->meta_title ?: $cycle->name . ' - Max Cycles')
+    @section('title', $cycle->meta_title ?: $cycle->name . ' - Cycles')
     @section('description', $cycle->meta_description ?: $cycle->description)
-    @section('og_title', $cycle->name . ' - Max Cycles')
+    @section('og_title', $cycle->name . ' - Cycles')
     @section('og_description', $cycle->description)
 
     <div class="bg-white">
@@ -20,7 +20,7 @@
                             </div>
                         @endif
                     </div>
-                    
+
                     @if($cycle->getMedia('images')->count() > 1)
                         <div class="mt-4 grid grid-cols-4 gap-2">
                             @foreach($cycle->getMedia('images') as $image)
@@ -35,7 +35,7 @@
                 <!-- Product info -->
                 <div class="mt-10 px-4 sm:px-0 sm:mt-16 lg:mt-0">
                     <h1 class="text-3xl font-extrabold tracking-tight text-gray-900">{{ $cycle->name }}</h1>
-                    
+
                     <div class="mt-3">
                         <h2 class="sr-only">Product information</h2>
                         <p class="text-3xl text-gray-900">₹{{ number_format($cycle->price) }}</p>
@@ -53,17 +53,17 @@
                             <h3 class="text-sm font-medium text-gray-900">Category:</h3>
                             <p class="ml-2 text-sm text-gray-500">{{ $cycle->category->name }}</p>
                         </div>
-                        
+
                         <div class="flex items-center mt-2">
                             <h3 class="text-sm font-medium text-gray-900">Brand:</h3>
                             <p class="ml-2 text-sm text-gray-500">{{ $cycle->brand }}</p>
                         </div>
-                        
+
                         <div class="flex items-center mt-2">
                             <h3 class="text-sm font-medium text-gray-900">Type:</h3>
                             <p class="ml-2 text-sm text-gray-500">{{ $cycle->type }}</p>
                         </div>
-                        
+
                         <div class="flex items-center mt-2">
                             <h3 class="text-sm font-medium text-gray-900">Stock Status:</h3>
                             <span class="ml-2 inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium {{ $cycle->stock_status === 'In Stock' ? 'bg-green-100 text-green-800' : 'bg-red-100 text-red-800' }}">
@@ -139,4 +139,4 @@
             document.getElementById('mainImage').src = src;
         }
     </script>
-</x-frontend-layout> 
+</x-frontend-layout>

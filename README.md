@@ -1,6 +1,6 @@
-# Max Cycles - Laravel E-commerce Website
+# Cycles - Laravel E-commerce Website
 
-A complete Laravel-based e-commerce website for Max Cycles, a bicycle store located in Aland, Karnataka, India. This project includes both an admin panel and a public website with full CRUD functionality.
+A complete Laravel-based e-commerce website for Cycles, a bicycle store located in Aland, Karnataka, India. This project includes both an admin panel and a public website with full CRUD functionality.
 
 ## Features
 
@@ -163,7 +163,7 @@ max-cycles/
 
 ### Environment Variables
 ```env
-APP_NAME="Max Cycles"
+APP_NAME="Cycles"
 APP_ENV=production
 APP_DEBUG=false
 APP_URL=https://yourdomain.com
@@ -202,12 +202,12 @@ For support and questions:
 
 ## License
 
-This project is proprietary software developed for Max Cycles. All rights reserved.
+This project is proprietary software developed for Cycles. All rights reserved.
 
 ## Contributing
 
-This is a private project for Max Cycles. For any modifications or customizations, please contact the development team.
+This is a private project for Cycles. For any modifications or customizations, please contact the development team.
 
 ---
 
-**Max Cycles** - Your trusted partner for premium bicycles in Aland, Karnataka.
+**Cycles** - Your trusted partner for premium bicycles in Aland, Karnataka.

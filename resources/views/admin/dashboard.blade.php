@@ -2,7 +2,7 @@
     <div class="py-6">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <h1 class="text-2xl font-semibold text-gray-900">Dashboard</h1>
-            
+
             <!-- Stats -->
             <div class="mt-6 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
                 <div class="bg-white overflow-hidden shadow rounded-lg">
@@ -15,7 +15,7 @@
                             </div>
                             <div class="ml-5 w-0 flex-1">
                                 <dl>
-                                    <dt class="text-sm font-medium text-gray-500 truncate">Total Cycles</dt>
+                                    <dt class="text-sm font-medium text-gray-500 truncate">Total Products</dt>
                                     <dd class="text-lg font-medium text-gray-900">{{ $stats['total_cycles'] }}</dd>
                                 </dl>
                             </div>
@@ -83,7 +83,7 @@
                 <div class="bg-white shadow rounded-lg">
                     <div class="px-4 py-5 sm:p-6">
                         <h3 class="text-lg leading-6 font-medium text-gray-900 mb-4">Recent Cycles</h3>
-                        
+
                         @if($recentCycles->count() > 0)
                             <div class="overflow-hidden">
                                 <table class="min-w-full divide-y divide-gray-200">
@@ -129,4 +129,4 @@
             </div>
         </div>
     </div>
-</x-admin-layout> 
+</x-admin-layout>

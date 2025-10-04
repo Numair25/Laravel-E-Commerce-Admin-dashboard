@@ -1,200 +1,213 @@
 <x-frontend-layout>
-    <!-- Hero Section -->
-    <div class="relative bg-blue-600 overflow-hidden">
-        <div class="max-w-7xl mx-auto">
-            <div class="relative z-10 pb-8 bg-blue-600 sm:pb-16 md:pb-20 lg:max-w-2xl lg:w-full lg:pb-28 xl:pb-32">
-                <main class="mt-10 mx-auto max-w-7xl px-4 sm:mt-12 sm:px-6 md:mt-16 lg:mt-20 lg:px-8 xl:mt-28">
-                    <div class="sm:text-center lg:text-left">
-                        <h1 class="text-4xl tracking-tight font-extrabold text-white sm:text-5xl md:text-6xl">
-                            <span class="block">Premium Bicycles</span>
-                            <span class="block text-blue-200">in Aland, Karnataka</span>
-                        </h1>
-                        <p class="mt-3 text-base text-blue-100 sm:mt-5 sm:text-lg sm:max-w-xl sm:mx-auto md:mt-5 md:text-xl lg:mx-0">
-                            Discover our wide range of high-quality bicycles including gear, non-gear, electric, and kids cycles from top brands. Your journey to adventure starts here.
-                        </p>
-                        <div class="mt-5 sm:mt-8 sm:flex sm:justify-center lg:justify-start">
-                            <div class="rounded-md shadow">
-                                <a href="{{ route('cycles.index') }}" class="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-blue-600 bg-white hover:bg-gray-50 md:py-4 md:text-lg md:px-10">
-                                    Browse Cycles
-                                </a>
-                            </div>
-                            <div class="mt-3 sm:mt-0 sm:ml-3">
-                                <a href="{{ route('contact.index') }}" class="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-blue-500 hover:bg-blue-700 md:py-4 md:text-lg md:px-10">
-                                    Contact Us
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </main>
+    <!-- Alpine.js for carousel and timers -->
+    <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+
+    <!-- Top Navigation Bar (if not already present in layout) -->
+    <nav class="bg-white shadow sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-16">
+            <div class="flex items-center gap-4">
+                <span class="text-2xl font-bold text-primary">E-commerce</span>
+                <div class="hidden md:flex gap-4 ml-8">
+                    <a href="{{ route('cycles.index') }}" class="text-gray-700 hover:text-primary font-medium">Cycles</a>
+                    <a href="{{ route('fashions.index') }}" class="text-gray-700 hover:text-secondary font-medium">Fashions</a>
+                    <a href="#deals" class="text-gray-700 hover:text-primary font-medium">Deals</a>
+                    <a href="{{ route('contact.index') }}" class="text-gray-700 hover:text-primary font-medium">Contact</a>
+                </div>
+            </div>
+            <div class="flex-1 mx-8">
+                <input type="text" placeholder="Search for products, brands and more..." class="w-full px-4 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-primary">
+            </div>
+            <div class="flex items-center gap-4">
+                <a href="#" class="text-gray-700 hover:text-primary font-medium">Account</a>
+                <a href="#" class="text-gray-700 hover:text-primary font-medium">Cart (0)</a>
             </div>
         </div>
-        <div class="lg:absolute lg:inset-y-0 lg:right-0 lg:w-1/2">
-            <div class="h-56 w-full bg-gradient-to-r from-blue-400 to-blue-600 sm:h-72 md:h-96 lg:w-full lg:h-full flex items-center justify-center">
-                <div class="text-center text-white">
-                    <svg class="mx-auto h-32 w-32 text-blue-200" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
-                    </svg>
-                    <p class="mt-4 text-xl font-semibold">Max Cycles</p>
-                    <p class="text-blue-200">Your Trusted Partner</p>
+    </nav>
+
+    <!-- Hero Carousel -->
+    <div class="w-full bg-gradient-to-br from-primary/10 to-secondary/10 py-6">
+        <div class="max-w-7xl mx-auto relative" x-data="{ slide: 0, slides: [
+            {img: 'https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=900&q=80', title: 'Mega Sale on Cycles!', desc: 'Up to 40% off on top brands. Limited time only.', cta: 'Shop Cycles', link: '#', color: 'from-primary to-accent'},
+            {img: 'https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=900&q=80', title: 'New Fashions Arrived!', desc: 'Trendy styles for every season.', cta: 'Shop Fashions', link: '#', color: 'from-secondary to-primary'},
+            {img: 'https://images.unsplash.com/photo-1519864600265-abb23847ef2c?auto=format&fit=crop&w=900&q=80', title: 'Kids Collection', desc: 'Cycles & clothes for all ages.', cta: 'Explore Kids', link: '#', color: 'from-accent to-primary'}
+        ], next() { this.slide = (this.slide+1)%this.slides.length }, prev() { this.slide = (this.slide+this.slides.length-1)%this.slides.length }, auto() { setInterval(()=>this.next(), 5000) } }" x-init="auto()">
+            <template x-for="(s, i) in slides" :key="i">
+                <div x-show="slide === i" class="relative rounded-2xl overflow-hidden h-64 md:h-80 transition-all duration-700">
+                    <img :src="s.img" alt="" class="absolute inset-0 w-full h-full object-cover object-center">
+                    <div :class="'absolute inset-0 bg-gradient-to-r ' + s.color + ' opacity-80'" ></div>
+                    <div class="relative z-10 flex flex-col justify-center items-start h-full px-8 md:px-16">
+                        <h2 class="text-3xl md:text-4xl font-extrabold text-white mb-2 drop-shadow"> <span x-text="s.title"></span> </h2>
+                        <p class="text-lg text-white mb-4 drop-shadow"><span x-text="s.desc"></span></p>
+                        <a :href="s.link" class="inline-block px-6 py-2 bg-white text-primary font-bold rounded shadow hover:bg-primary/10"> <span x-text="s.cta"></span> </a>
+                    </div>
                 </div>
+            </template>
+            <button @click="prev" class="absolute left-2 top-1/2 -translate-y-1/2 bg-white/70 hover:bg-white rounded-full p-2 shadow z-20"><svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"/></svg></button>
+            <button @click="next" class="absolute right-2 top-1/2 -translate-y-1/2 bg-white/70 hover:bg-white rounded-full p-2 shadow z-20"><svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg></button>
+            <div class="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2 z-20">
+                <template x-for="(s, i) in slides" :key="i">
+                    <button @click="slide = i" :class="{'bg-white': slide===i, 'bg-white/50': slide!==i}" class="w-3 h-3 rounded-full border border-white"></button>
+                </template>
+            </div>
+        </div>
+    </div>
+
+    <!-- Category Grid -->
+    <div class="max-w-7xl mx-auto mt-10 px-4">
+        <h2 class="text-xl font-bold mb-4">Shop by Category</h2>
+        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-6">
+            <div class="flex flex-col items-center bg-white rounded-lg shadow p-4 hover:scale-105 hover:shadow-xl transition cursor-pointer group">
+                <span class="bg-primary/10 p-3 rounded-full mb-2"><svg class="w-8 h-8 text-primary" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span>
+                <span class="font-medium group-hover:text-primary">Mountain Bikes</span>
+            </div>
+            <div class="flex flex-col items-center bg-white rounded-lg shadow p-4 hover:scale-105 hover:shadow-xl transition cursor-pointer group">
+                <span class="bg-secondary/10 p-3 rounded-full mb-2"><svg class="w-8 h-8 text-secondary" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path stroke-linecap="round" stroke-linejoin="round" d="M8 12h8"/></svg></span>
+                <span class="font-medium group-hover:text-secondary">Men's Fashion</span>
+            </div>
+            <div class="flex flex-col items-center bg-white rounded-lg shadow p-4 hover:scale-105 hover:shadow-xl transition cursor-pointer group">
+                <span class="bg-primary/10 p-3 rounded-full mb-2"><svg class="w-8 h-8 text-primary" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="4"/></svg></span>
+                <span class="font-medium group-hover:text-primary">Electric Bikes</span>
+            </div>
+            <div class="flex flex-col items-center bg-white rounded-lg shadow p-4 hover:scale-105 hover:shadow-xl transition cursor-pointer group">
+                <span class="bg-secondary/10 p-3 rounded-full mb-2"><svg class="w-8 h-8 text-secondary" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4"/></svg></span>
+                <span class="font-medium group-hover:text-secondary">Women's Fashion</span>
+            </div>
+            <div class="flex flex-col items-center bg-white rounded-lg shadow p-4 hover:scale-105 hover:shadow-xl transition cursor-pointer group">
+                <span class="bg-primary/10 p-3 rounded-full mb-2"><svg class="w-8 h-8 text-primary" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3"/></svg></span>
+                <span class="font-medium group-hover:text-primary">Kids Cycles</span>
+            </div>
+            <div class="flex flex-col items-center bg-white rounded-lg shadow p-4 hover:scale-105 hover:shadow-xl transition cursor-pointer group">
+                <span class="bg-secondary/10 p-3 rounded-full mb-2"><svg class="w-8 h-8 text-secondary" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="4"/></svg></span>
+                <span class="font-medium group-hover:text-secondary">Kids Fashion</span>
             </div>
         </div>
     </div>
 
-    <!-- Featured Cycles Section -->
-    <div class="py-12 bg-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="lg:text-center">
-                <h2 class="text-base text-blue-600 font-semibold tracking-wide uppercase">Featured</h2>
-                <p class="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl">
-                    Latest Cycles
-                </p>
-                <p class="mt-4 max-w-2xl text-xl text-gray-500 lg:mx-auto">
-                    Explore our newest additions to the Max Cycles collection
-                </p>
-            </div>
-
-            @if($featuredCycles->count() > 0)
-                <div class="mt-10">
-                    <div class="grid grid-cols-1 gap-y-10 gap-x-6 sm:grid-cols-2 lg:grid-cols-3 xl:gap-x-8">
-                        @foreach($featuredCycles as $cycle)
-                            <div class="group relative">
-                                <div class="w-full min-h-80 bg-gray-200 aspect-w-1 aspect-h-1 rounded-md overflow-hidden group-hover:opacity-75 lg:h-80 lg:aspect-none">
-                                    @if($cycle->getFirstMediaUrl('images'))
-                                        <img src="{{ $cycle->getFirstMediaUrl('images') }}" alt="{{ $cycle->name }}" class="w-full h-full object-center object-cover lg:w-full lg:h-full">
-                                    @else
-                                        <div class="w-full h-full flex items-center justify-center bg-gray-200">
-                                            <svg class="h-24 w-24 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
-                                            </svg>
-                                        </div>
-                                    @endif
-                                </div>
-                                <div class="mt-4 flex justify-between">
-                                    <div>
-                                        <h3 class="text-sm text-gray-700">
-                                            <a href="{{ route('cycles.show', $cycle) }}">
-                                                <span aria-hidden="true" class="absolute inset-0"></span>
-                                                {{ $cycle->name }}
-                                            </a>
-                                        </h3>
-                                        <p class="mt-1 text-sm text-gray-500">{{ $cycle->brand }}</p>
-                                        <p class="mt-1 text-sm text-gray-500">{{ $cycle->category->name }}</p>
-                                    </div>
-                                    <p class="text-sm font-medium text-gray-900">₹{{ number_format($cycle->price) }}</p>
-                                </div>
-                                <div class="mt-2">
-                                    <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium {{ $cycle->stock_status === 'In Stock' ? 'bg-green-100 text-green-800' : 'bg-red-100 text-red-800' }}">
-                                        {{ $cycle->stock_status }}
-                                    </span>
-                                </div>
-                            </div>
-                        @endforeach
+    <!-- Product Carousels -->
+    <div class="max-w-7xl mx-auto mt-12 px-4">
+        <h2 class="text-xl font-bold mb-4">Featured Cycles</h2>
+        <div class="relative" x-data="{ scroll: $refs.cycleScroll }">
+            <button @click="$refs.cycleScroll.scrollLeft -= 300" class="absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-white/80 hover:bg-primary/10 rounded-full p-2 shadow"><svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"/></svg></button>
+            <div class="flex overflow-x-auto gap-6 pb-4 no-scrollbar" x-ref="cycleScroll">
+                @foreach($featuredCycles as $cycle)
+                <div class="min-w-[220px] bg-white rounded-lg shadow p-4 flex flex-col items-center hover:shadow-xl transition relative group">
+                    <a href="{{ route('cycles.show', $cycle) }}">
+                        @if($cycle->getFirstMediaUrl('images'))
+                            <img src="{{ $cycle->getFirstMediaUrl('images') }}" class="h-32 w-32 object-cover rounded mb-2" alt="{{ $cycle->name }}">
+                        @else
+                            <img src="/storage/download.jfif" class="h-32 w-32 object-cover rounded mb-2" alt="{{ $cycle->name }}">
+                        @endif
+                    </a>
+                    @if($loop->index % 2 == 0)
+                        <span class="absolute top-2 left-2 bg-primary text-white text-xs px-2 py-1 rounded">Best Seller</span>
+                    @endif
+                    <span class="font-bold text-primary mb-1">{{ $cycle->name }}</span>
+                    <span class="text-gray-500 text-sm mb-2">{{ $cycle->brand }}</span>
+                    <span class="flex items-center mb-2">
+                        <svg class="w-4 h-4 text-yellow-400 mr-1" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.967a1 1 0 00.95.69h4.175c.969 0 1.371 1.24.588 1.81l-3.38 2.455a1 1 0 00-.364 1.118l1.287 3.966c.3.922-.755 1.688-1.54 1.118l-3.38-2.455a1 1 0 00-1.175 0l-3.38 2.455c-.784.57-1.838-.196-1.54-1.118l1.287-3.966a1 1 0 00-.364-1.118L2.049 9.394c-.783-.57-.38-1.81.588-1.81h4.175a1 1 0 00.95-.69l1.286-3.967z"/></svg>
+                        <span>4.{{ ($loop->index % 5) + 1 }}</span>
+                    </span>
+                    <span class="text-lg font-bold text-primary mb-2">₹{{ number_format($cycle->price) }}</span>
+                    <div class="flex gap-2 w-full opacity-0 group-hover:opacity-100 transition">
+                        <button class="flex-1 px-2 py-1 bg-primary text-white rounded hover:bg-secondary text-xs">Add to Cart</button>
+                        <button class="flex-1 px-2 py-1 bg-gray-200 text-primary rounded hover:bg-primary/10 text-xs">Wishlist</button>
                     </div>
                 </div>
-            @else
-                <div class="text-center py-12">
-                    <svg class="mx-auto h-12 w-12 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
-                    </svg>
-                    <h3 class="mt-2 text-sm font-medium text-gray-900">No cycles available</h3>
-                    <p class="mt-1 text-sm text-gray-500">Check back soon for new arrivals.</p>
+                @endforeach
+            </div>
+            <button @click="$refs.cycleScroll.scrollLeft += 300" class="absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-white/80 hover:bg-primary/10 rounded-full p-2 shadow"><svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg></button>
+        </div>
+    </div>
+    <div class="max-w-7xl mx-auto mt-12 px-4">
+        <h2 class="text-xl font-bold mb-4">Featured Fashions</h2>
+        <div class="relative" x-data="{ scroll: $refs.fashionScroll }">
+            <button @click="$refs.fashionScroll.scrollLeft -= 300" class="absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-white/80 hover:bg-secondary/10 rounded-full p-2 shadow"><svg class="w-6 h-6 text-secondary" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"/></svg></button>
+            <div class="flex overflow-x-auto gap-6 pb-4 no-scrollbar" x-ref="fashionScroll">
+                @foreach($featuredFashions as $fashion)
+                <div class="min-w-[220px] bg-white rounded-lg shadow p-4 flex flex-col items-center hover:shadow-xl transition relative group">
+                    <a href="{{ route('fashions.show', $fashion) }}">
+                        @if($fashion->image)
+                            <img src="{{ $fashion->image }}" class="h-32 w-32 object-cover rounded mb-2" alt="{{ $fashion->name }}">
+                        @else
+                            <img src="/storage/download.jfif" class="h-32 w-32 object-cover rounded mb-2" alt="{{ $fashion->name }}">
+                        @endif
+                    </a>
+                    @if($loop->index % 3 == 0)
+                        <span class="absolute top-2 left-2 bg-secondary text-white text-xs px-2 py-1 rounded">New</span>
+                    @endif
+                    <span class="font-bold text-secondary mb-1">{{ $fashion->name }}</span>
+                    <span class="text-gray-500 text-sm mb-2">Fashion</span>
+                    <span class="flex items-center mb-2">
+                        <svg class="w-4 h-4 text-yellow-400 mr-1" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.967a1 1 0 00.95.69h4.175c.969 0 1.371 1.24.588 1.81l-3.38 2.455a1 1 0 00-.364 1.118l1.287 3.966c.3.922-.755 1.688-1.54 1.118l-3.38-2.455a1 1 0 00-1.175 0l-3.38 2.455c-.784.57-1.838-.196-1.54-1.118l1.287-3.966a1 1 0 00-.364-1.118L2.049 9.394c-.783-.57-.38-1.81.588-1.81h4.175a1 1 0 00.95-.69l1.286-3.967z"/></svg>
+                        <span>4.{{ ($loop->index % 5) + 1 }}</span>
+                    </span>
+                    <span class="text-lg font-bold text-secondary mb-2">₹{{ number_format($fashion->price) }}</span>
+                    <div class="flex gap-2 w-full opacity-0 group-hover:opacity-100 transition">
+                        <button class="flex-1 px-2 py-1 bg-secondary text-white rounded hover:bg-primary text-xs">Add to Cart</button>
+                        <button class="flex-1 px-2 py-1 bg-gray-200 text-secondary rounded hover:bg-secondary/10 text-xs">Wishlist</button>
+                    </div>
                 </div>
-            @endif
+                @endforeach
+            </div>
+            <button @click="$refs.fashionScroll.scrollLeft += 300" class="absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-white/80 hover:bg-secondary/10 rounded-full p-2 shadow"><svg class="w-6 h-6 text-secondary" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg></button>
         </div>
     </div>
 
-    <!-- Categories Section -->
-    <div class="py-12 bg-gray-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="lg:text-center">
-                <h2 class="text-base text-blue-600 font-semibold tracking-wide uppercase">Categories</h2>
-                <p class="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl">
-                    Browse by Category
-                </p>
-                <p class="mt-4 max-w-2xl text-xl text-gray-500 lg:mx-auto">
-                    Find the perfect cycle for your needs
-                </p>
+    <!-- Deals/Offers Section -->
+    <div class="max-w-7xl mx-auto mt-12 px-4" id="deals">
+        <h2 class="text-xl font-bold mb-4">Today's Deals & Offers</h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+            @for($i = 1; $i <= 4; $i++)
+            <div class="bg-gradient-to-br from-secondary/10 to-primary/10 rounded-xl shadow-lg p-6 flex flex-col items-center relative" x-data="{ time: 3600 - $i*600, tick() { if(this.time>0){ setInterval(()=>this.time--,1000) } } }" x-init="tick()">
+                <span class="text-2xl font-bold text-primary mb-2">Deal {{ $i }}</span>
+                <p class="text-gray-700 mb-2">Save up to {{ 10 + $i * 5 }}% on select items!</p>
+                <div class="mb-4 flex items-center gap-1 text-xs text-gray-600">
+                    <svg class="w-4 h-4 text-secondary" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6l4 2"/></svg>
+                    <span x-text="Math.floor(time/60)+'m '+(time%60)+'s left'"></span>
+                </div>
+                <a href="#" class="px-4 py-2 bg-primary text-white rounded hover:bg-secondary font-bold">Shop Deal</a>
+                <span class="absolute top-2 right-2 bg-primary text-white text-xs px-2 py-1 rounded">Limited</span>
             </div>
-
-            @if($categories->count() > 0)
-                <div class="mt-10">
-                    <div class="grid grid-cols-1 gap-y-10 gap-x-6 sm:grid-cols-2 lg:grid-cols-3 xl:gap-x-8">
-                        @foreach($categories as $category)
-                            <div class="group relative">
-                                <div class="w-full h-64 bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow duration-300">
-                                    <div class="text-center">
-                                        <div class="mx-auto h-16 w-16 bg-blue-100 rounded-full flex items-center justify-center mb-4">
-                                            <svg class="h-8 w-8 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z" />
-                                            </svg>
-                                        </div>
-                                        <h3 class="text-lg font-medium text-gray-900 mb-2">{{ $category->name }}</h3>
-                                        <p class="text-sm text-gray-500 mb-4">{{ $category->cycles_count }} cycles available</p>
-                                        <a href="{{ route('cycles.index', ['category' => $category->slug]) }}" class="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700">
-                                            View Cycles
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        @endforeach
-                    </div>
-                </div>
-            @else
-                <div class="text-center py-12">
-                    <svg class="mx-auto h-12 w-12 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z" />
-                    </svg>
-                    <h3 class="mt-2 text-sm font-medium text-gray-900">No categories available</h3>
-                    <p class="mt-1 text-sm text-gray-500">Categories will be added soon.</p>
-                </div>
-            @endif
+            @endfor
         </div>
     </div>
 
-    <!-- About Section -->
-    <div class="py-12 bg-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="lg:text-center">
-                <h2 class="text-base text-blue-600 font-semibold tracking-wide uppercase">About Us</h2>
-                <p class="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl">
-                    Why Choose Max Cycles?
-                </p>
-            </div>
-
-            <div class="mt-10">
-                <div class="grid grid-cols-1 gap-8 md:grid-cols-3">
-                    <div class="text-center">
-                        <div class="mx-auto h-12 w-12 bg-blue-100 rounded-full flex items-center justify-center mb-4">
-                            <svg class="h-6 w-6 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                            </svg>
-                        </div>
-                        <h3 class="text-lg font-medium text-gray-900 mb-2">Quality Assurance</h3>
-                        <p class="text-gray-500">We offer only the highest quality bicycles from trusted brands, ensuring durability and performance.</p>
-                    </div>
-
-                    <div class="text-center">
-                        <div class="mx-auto h-12 w-12 bg-blue-100 rounded-full flex items-center justify-center mb-4">
-                            <svg class="h-6 w-6 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
-                            </svg>
-                        </div>
-                        <h3 class="text-lg font-medium text-gray-900 mb-2">Expert Service</h3>
-                        <p class="text-gray-500">Our experienced team provides expert advice and after-sales support to help you choose the perfect cycle.</p>
-                    </div>
-
-                    <div class="text-center">
-                        <div class="mx-auto h-12 w-12 bg-blue-100 rounded-full flex items-center justify-center mb-4">
-                            <svg class="h-6 w-6 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
-                            </svg>
-                        </div>
-                        <h3 class="text-lg font-medium text-gray-900 mb-2">Wide Selection</h3>
-                        <p class="text-gray-500">From kids' cycles to electric bikes, we have a comprehensive range to meet all your cycling needs.</p>
-                    </div>
+    <!-- Newsletter Signup & Footer -->
+    <footer class="bg-gray-900 mt-16 text-gray-300">
+        <div class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-5 gap-8">
+            <div class="md:col-span-2">
+                <h3 class="text-lg font-bold text-white mb-4">E-commerce</h3>
+                <p class="mb-4 text-gray-400">Your trusted partner for premium cycles and readymade fashions in India. We offer a wide range of cycles and clothes for all ages.</p>
+                <div class="flex gap-4 mt-2">
+                    <a href="#" class="hover:text-white"><svg class="w-6 h-6 text-gray-400 hover:text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 00-5 5v3H7a1 1 0 00-1 1v4a1 1 0 001 1h3v7a1 1 0 001 1h4a1 1 0 001-1v-7h2.586a1 1 0 00.707-1.707l-7-7A1 1 0 0012 2z"/></svg></a>
+                    <a href="#" class="hover:text-white"><svg class="w-6 h-6 text-gray-400 hover:text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M24 4.557a9.93 9.93 0 01-2.828.775A4.932 4.932 0 0023.337 3.1a9.864 9.864 0 01-3.127 1.195A4.916 4.916 0 0016.616 2c-2.73 0-4.942 2.21-4.942 4.932 0 .386.045.762.127 1.124C7.728 7.89 4.1 6.13 1.671 3.149a4.822 4.822 0 00-.666 2.475c0 1.708.87 3.216 2.188 4.099A4.904 4.904 0 01.964 8.1v.062a4.936 4.936 0 003.95 4.827 4.996 4.996 0 01-2.212.084 4.936 4.936 0 004.604 3.417A9.867 9.867 0 010 21.543a13.94 13.94 0 007.548 2.209c9.057 0 14.009-7.496 14.009-13.986 0-.213-.005-.425-.014-.636A9.936 9.936 0 0024 4.557z"/></svg></a>
+                    <a href="#" class="hover:text-white"><svg class="w-6 h-6 text-gray-400 hover:text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M19.615 3.184C18.403 2.403 16.946 2 15.5 2c-1.447 0-2.904.403-4.115 1.184C9.403 2.403 7.946 2 6.5 2 5.053 2 3.596 2.403 2.385 3.184A7.963 7.963 0 000 8c0 2.21.896 4.21 2.385 5.816C3.596 15.597 5.053 16 6.5 16c1.447 0 2.904-.403 4.115-1.184C14.597 15.597 16.054 16 17.5 16c1.447 0 2.904-.403 4.115-1.184A7.963 7.963 0 0024 8c0-2.21-.896-4.21-2.385-5.816z"/></svg></a>
                 </div>
             </div>
+            <div>
+                <h4 class="text-md font-semibold mb-2 text-white">Categories</h4>
+                <ul class="space-y-1">
+                    <li><a href="#" class="hover:text-white text-gray-300">Cycles</a></li>
+                    <li><a href="#" class="hover:text-white text-gray-300">Fashions</a></li>
+                    <li><a href="#" class="hover:text-white text-gray-300">Deals</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="text-md font-semibold mb-2 text-white">Support</h4>
+                <ul class="space-y-1">
+                    <li><a href="#" class="hover:text-white text-gray-300">Contact</a></li>
+                    <li><a href="#" class="hover:text-white text-gray-300">Returns</a></li>
+                    <li><a href="#" class="hover:text-white text-gray-300">FAQ</a></li>
+                </ul>
+            </div>
+            <div class="md:col-span-1">
+                <h4 class="text-md font-semibold mb-2 text-white">Newsletter</h4>
+                <form class="flex flex-col gap-2">
+                    <input type="email" placeholder="Your email address" class="px-3 py-2 rounded bg-gray-800 text-gray-200 focus:outline-none focus:ring-2 focus:ring-primary">
+                    <button type="submit" class="bg-primary hover:bg-secondary text-white rounded px-3 py-2 font-semibold">Subscribe</button>
+                </form>
+            </div>
         </div>
-    </div>
-</x-frontend-layout> 
+        <div class="text-center text-gray-500 py-4 border-t border-gray-800">© {{ date('Y') }} E-commerce. All rights reserved. Aland, Karnataka, India.</div>
+    </footer>
+</x-frontend-layout>

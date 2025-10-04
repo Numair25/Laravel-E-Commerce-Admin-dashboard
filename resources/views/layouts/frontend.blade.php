@@ -5,20 +5,20 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="csrf-token" content="{{ csrf_token() }}">
 
-        <title>@yield('title', 'Max Cycles - Premium Bicycles in Aland, Karnataka')</title>
-        <meta name="description" content="@yield('description', 'Discover premium bicycles at Max Cycles in Aland, Karnataka. We offer a wide range of gear, non-gear, electric, and kids cycles from top brands.')">
-        
+        <title>@yield('title', 'E-commerce - Premium Cycles & Fashions in Aland, Karnataka')</title>
+        <meta name="description" content="@yield('description', 'Discover premium cycles and readymade fashions at E-commerce in Aland, Karnataka. We offer a wide range of cycles and clothes for all ages.')">
+
         <!-- Open Graph Meta Tags -->
-        <meta property="og:title" content="@yield('og_title', 'Max Cycles - Premium Bicycles in Aland, Karnataka')">
-        <meta property="og:description" content="@yield('og_description', 'Discover premium bicycles at Max Cycles in Aland, Karnataka. We offer a wide range of gear, non-gear, electric, and kids cycles from top brands.')">
+        <meta property="og:title" content="@yield('og_title', 'E-commerce - Premium Cycles & Fashions in Aland, Karnataka')">
+        <meta property="og:description" content="@yield('og_description', 'Discover premium cycles and readymade fashions at E-commerce in Aland, Karnataka. We offer a wide range of cycles and clothes for all ages.')">
         <meta property="og:type" content="website">
         <meta property="og:url" content="{{ request()->url() }}">
         <meta property="og:image" content="@yield('og_image', asset('images/max-cycles-og.jpg'))">
-        
+
         <!-- Twitter Card Meta Tags -->
         <meta name="twitter:card" content="summary_large_image">
-        <meta name="twitter:title" content="@yield('twitter_title', 'Max Cycles - Premium Bicycles in Aland, Karnataka')">
-        <meta name="twitter:description" content="@yield('twitter_description', 'Discover premium bicycles at Max Cycles in Aland, Karnataka.')">
+        <meta name="twitter:title" content="@yield('twitter_title', 'E-commerce - Premium Cycles & Fashions in Aland, Karnataka')">
+        <meta name="twitter:description" content="@yield('twitter_description', 'Discover premium cycles and readymade fashions at E-commerce in Aland, Karnataka.')">
         <meta name="twitter:image" content="@yield('twitter_image', asset('images/max-cycles-og.jpg'))">
 
         <!-- Fonts -->
@@ -38,10 +38,10 @@
                             <!-- Logo -->
                             <div class="flex-shrink-0 flex items-center">
                                 <a href="{{ route('home') }}" class="text-2xl font-bold text-blue-600">
-                                    Max Cycles
+                                    E-commerce
                                 </a>
                             </div>
-                            
+
                             <!-- Navigation Links -->
                             <div class="hidden sm:ml-6 sm:flex sm:space-x-8">
                                 <a href="{{ route('home') }}" class="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">
@@ -49,6 +49,9 @@
                                 </a>
                                 <a href="{{ route('cycles.index') }}" class="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">
                                     Browse Cycles
+                                </a>
+                                <a href="{{ route('fashions.index') }}" class="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">
+                                    Browse Fashions
                                 </a>
                                 <a href="{{ route('about') }}" class="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">
                                     About Us
@@ -88,6 +91,7 @@
                     <div class="pt-2 pb-3 space-y-1">
                         <a href="{{ route('home') }}" class="bg-blue-50 border-blue-500 text-blue-700 block pl-3 pr-4 py-2 border-l-4 text-base font-medium">Home</a>
                         <a href="{{ route('cycles.index') }}" class="border-transparent text-gray-500 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700 block pl-3 pr-4 py-2 border-l-4 text-base font-medium">Browse Cycles</a>
+                        <a href="{{ route('fashions.index') }}" class="border-transparent text-gray-500 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700 block pl-3 pr-4 py-2 border-l-4 text-base font-medium">Browse Fashions</a>
                         <a href="{{ route('about') }}" class="border-transparent text-gray-500 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700 block pl-3 pr-4 py-2 border-l-4 text-base font-medium">About Us</a>
                         <a href="{{ route('contact.index') }}" class="border-transparent text-gray-500 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700 block pl-3 pr-4 py-2 border-l-4 text-base font-medium">Contact</a>
                     </div>
@@ -120,27 +124,28 @@
                 <div class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
                     <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
                         <div class="col-span-1 md:col-span-2">
-                            <h3 class="text-white text-lg font-semibold mb-4">Max Cycles</h3>
+                            <h3 class="text-white text-lg font-semibold mb-4">E-commerce</h3>
                             <p class="text-gray-300 mb-4">
-                                Your trusted partner for premium bicycles in Aland, Karnataka. We offer a wide range of cycles for all ages and preferences.
+                                Your trusted partner for premium cycles and readymade fashions in Aland, Karnataka. We offer a wide range of cycles and clothes for all ages.
                             </p>
                             <div class="text-gray-300">
                                 <p><strong>Address:</strong> Aland, Karnataka, India</p>
                                 <p><strong>Phone:</strong> +91 XXXXXXXXXX</p>
-                                <p><strong>Email:</strong> info@maxcycles.com</p>
+                                <p><strong>Email:</strong> info@maxstyles.com</p>
                             </div>
                         </div>
-                        
+
                         <div>
                             <h4 class="text-white text-sm font-semibold mb-4">Quick Links</h4>
                             <ul class="space-y-2">
                                 <li><a href="{{ route('home') }}" class="text-gray-300 hover:text-white">Home</a></li>
                                 <li><a href="{{ route('cycles.index') }}" class="text-gray-300 hover:text-white">Browse Cycles</a></li>
+                                <li><a href="{{ route('fashions.index') }}" class="text-gray-300 hover:text-white">Browse Fashions</a></li>
                                 <li><a href="{{ route('about') }}" class="text-gray-300 hover:text-white">About Us</a></li>
                                 <li><a href="{{ route('contact.index') }}" class="text-gray-300 hover:text-white">Contact</a></li>
                             </ul>
                         </div>
-                        
+
                         <div>
                             <h4 class="text-white text-sm font-semibold mb-4">Categories</h4>
                             <ul class="space-y-2">
@@ -151,14 +156,14 @@
                             </ul>
                         </div>
                     </div>
-                    
+
                     <div class="mt-8 pt-8 border-t border-gray-700">
                         <p class="text-gray-300 text-center">
-                            © {{ date('Y') }} Max Cycles. All rights reserved.
+                            © {{ date('Y') }} E-commerce. All rights reserved.
                         </p>
                     </div>
                 </div>
             </footer>
         </div>
     </body>
-</html> 
+</html>
