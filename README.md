@@ -1,13 +1,13 @@
-# Cycles - Laravel E-commerce Website
+# Products - Laravel E-commerce Website
 
-A complete Laravel-based e-commerce website for Cycles, a bicycle store located in Gulbarga, Karnataka, India. This project includes both an admin panel and a public website with full CRUD functionality.
+A complete Laravel-based e-commerce website for Products, a bicycle store located in Gulbarga, Karnataka, India. This project includes both an admin panel and a public website with full CRUD functionality.
 
 ## Features
 
 ### Admin Panel
 - **Authentication**: Secure login with Laravel Breeze
-- **Dashboard**: Overview with statistics and recent cycles
-- **Cycle Management**: Full CRUD operations with image uploads
+- **Dashboard**: Overview with statistics and recent products
+- **Product Management**: Full CRUD operations with image uploads
 - **Category Management**: Organize cycles by categories
 - **Payment Gateway Management**: Configure payment options
 - **SEO Management**: Meta titles, descriptions, and keywords
@@ -18,8 +18,8 @@ A complete Laravel-based e-commerce website for Cycles, a bicycle store located 
 ### Public Website
 - **Responsive Design**: Mobile-friendly interface with Tailwind CSS
 - **SEO Optimized**: Clean URLs, meta tags, and sitemap
-- **Cycle Browsing**: Filter, search, and sort functionality
-- **Cycle Details**: Detailed product pages with image galleries
+- **Product Browsing**: Filter, search, and sort functionality
+- **Product Details**: Detailed product pages with image galleries
 - **Contact Form**: Customer inquiry system
 - **About Page**: Company information and story
 - **Category Pages**: Organized cycle browsing
@@ -121,7 +121,7 @@ max-cycles/
 ## Key Features Explained
 
 ### Admin Panel Features
-- **Cycle Management**: Add, edit, delete cycles with multiple images
+- **Product Management**: Add, edit, delete products with multiple images
 - **Category Management**: Organize cycles into categories
 - **SEO Fields**: Meta titles, descriptions for better search visibility
 - **Publish Control**: Toggle cycle visibility on the public website
@@ -130,15 +130,15 @@ max-cycles/
 ### Public Website Features
 - **Responsive Design**: Works on all devices
 - **Advanced Filtering**: Filter by category, type, price range
-- **Search Functionality**: Search cycles by name, brand, description
+- **Search Functionality**: Search products by name, brand, description
 - **SEO Optimization**: Clean URLs, meta tags, structured data
 - **Contact System**: Customer inquiry form with validation
 
 ## Customization
 
-### Adding New Cycle Types
-1. Update the `$fillable` array in the Cycle model
-2. Add validation rules in CycleController
+### Adding New Product Types
+1. Update the `$fillable` array in the Product model
+2. Add validation rules in ProductController
 3. Update the frontend filter options
 
 ### Modifying Categories
@@ -147,7 +147,7 @@ max-cycles/
 3. Adjust the admin category management
 
 ### SEO Optimization
-- Update meta titles and descriptions in cycle management
+- Update meta titles and descriptions in product management
 - Modify the sitemap generation in SitemapController
 - Customize robots.txt for search engine crawling
 
@@ -163,7 +163,7 @@ max-cycles/
 
 ### Environment Variables
 ```env
-APP_NAME="Cycles"
+APP_NAME="Products"
 APP_ENV=production
 APP_DEBUG=false
 APP_URL=https://yourdomain.com
@@ -202,7 +202,7 @@ For support and questions:
 
 ## License
 
-This project is proprietary software developed for Cycles. All rights reserved.
+This project is proprietary software developed for Products. All rights reserved.
 
 ## Contributing
 
@@ -210,4 +210,4 @@ This is a private project for Cycles. For any modifications or customizations, p
 
 ---
 
-**Cycles** - Your trusted partner for premium bicycles in Gulbarga, Karnataka.
+**Products** - Your trusted partner for premium bicycles in Gulbarga, Karnataka.

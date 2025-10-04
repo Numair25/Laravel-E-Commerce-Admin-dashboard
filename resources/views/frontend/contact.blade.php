@@ -1,6 +1,6 @@
 <x-frontend-layout>
     @section('title', 'Contact Us - E-commerce')
-    @section('description', 'Get in touch with E-commerce in Gulbarga, Karnataka. We are here to help you find the perfect cycle or fashion for your needs.')
+    @section('description', 'Get in touch with E-commerce in Gulbarga, Karnataka. We are here to help you find the perfect product or fashion for your needs.')
 
     <div class="bg-white">
         <div class="max-w-7xl mx-auto py-16 px-4 sm:py-24 sm:px-6 lg:px-8">
@@ -11,7 +11,7 @@
                     </h2>
                     <div class="mt-3">
                         <p class="text-lg text-gray-500">
-                            Get in touch with us for any inquiries about our cycles, services, or to schedule a visit to our store in Gulbarga, Karnataka.
+                            Get in touch with us for any inquiries about our products, services, or to schedule a visit to our store in Gulbarga, Karnataka.
                         </p>
                     </div>
                     <div class="mt-8">
@@ -123,7 +123,7 @@
                         Visit Our Store
                     </h2>
                     <p class="mt-3 text-lg text-gray-500">
-                        Come and explore our wide range of cycles in person
+                        Come and explore our wide range of products in person
                     </p>
                 </div>
                 <div class="mt-12 bg-white rounded-lg shadow-lg p-8">

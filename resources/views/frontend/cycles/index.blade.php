@@ -1,16 +1,16 @@
 <x-frontend-layout>
     <div class="bg-white">
         <div class="max-w-2xl mx-auto py-16 px-4 sm:py-24 sm:px-6 lg:max-w-7xl lg:px-8">
-            <h1 class="text-3xl font-extrabold tracking-tight text-gray-900">Browse Cycles</h1>
-            <p class="mt-4 text-gray-500">Find the perfect cycle for your needs</p>
+            <h1 class="text-3xl font-extrabold tracking-tight text-gray-900">Browse Products</h1>
+            <p class="mt-4 text-gray-500">Find the perfect product for your needs</p>
 
             <!-- Filters and Search -->
             <div class="mt-8 border-t border-gray-200 pt-8">
-                <form method="GET" action="{{ route('cycles.index') }}" class="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
+                <form method="GET" action="{{ route('products.index') }}" class="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
                     <!-- Search -->
                     <div>
                         <label for="search" class="block text-sm font-medium text-gray-700">Search</label>
-                        <input type="text" name="search" id="search" value="{{ request('search') }}" placeholder="Search cycles..."
+                        <input type="text" name="search" id="search" value="{{ request('search') }}" placeholder="Search products..."
                             class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm">
                     </div>
 

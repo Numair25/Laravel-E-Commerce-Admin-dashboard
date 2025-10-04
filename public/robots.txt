@@ -1,4 +1,5 @@
 User-agent: *
+User-agent: *
 Allow: /
 
 # Sitemap
@@ -12,6 +13,6 @@ Disallow: /password/
 
 # Allow important pages
 Allow: /
-Allow: /cycles
+Allow: /products
 Allow: /about
 Allow: /contact

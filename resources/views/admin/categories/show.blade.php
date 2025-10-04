@@ -48,8 +48,8 @@
                         @endif
                         
                         <div class="bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-                            <dt class="text-sm font-medium text-gray-500">Total Cycles</dt>
-                            <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">{{ $category->cycles->count() }}</dd>
+                            <dt class="text-sm font-medium text-gray-500">Total Products</dt>
+                            <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">{{ $category->products->count() }}</dd>
                         </div>
                         
                         <div class="bg-white px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
@@ -65,15 +65,15 @@
                 </div>
             </div>
 
-            <!-- Associated Cycles -->
-            @if($category->cycles->count() > 0)
+            <!-- Associated Products -->
+            @if($category->products->count() > 0)
             <div class="mt-8 bg-white shadow overflow-hidden sm:rounded-lg">
                 <div class="px-4 py-5 sm:px-6">
-                    <h3 class="text-lg leading-6 font-medium text-gray-900">Associated Cycles</h3>
+                    <h3 class="text-lg leading-6 font-medium text-gray-900">Associated Products</h3>
                 </div>
                 <div class="border-t border-gray-200">
                     <ul class="divide-y divide-gray-200">
-                        @foreach($category->cycles as $cycle)
+                        @foreach($category->products as $cycle)
                         <li class="px-4 py-4 sm:px-6">
                             <div class="flex items-center justify-between">
                                 <div>
@@ -84,7 +84,7 @@
                                     <span class="inline-flex px-2 py-1 text-xs font-semibold rounded-full {{ $cycle->is_published ? 'bg-green-100 text-green-800' : 'bg-red-100 text-red-800' }}">
                                         {{ $cycle->is_published ? 'Published' : 'Draft' }}
                                     </span>
-                                    <a href="{{ route('admin.cycles.show', $cycle) }}" class="text-indigo-600 hover:text-indigo-900 text-sm font-medium">
+                                    <a href="{{ route('admin.products.show', $cycle) }}" class="text-indigo-600 hover:text-indigo-900 text-sm font-medium">
                                         View
                                     </a>
                                 </div>

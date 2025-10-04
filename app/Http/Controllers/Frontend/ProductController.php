@@ -4,15 +4,15 @@ namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
 use App\Models\Category;
-use App\Models\Cycle;
+use App\Models\Product;
 use Illuminate\Http\Request;
 use Illuminate\View\View;
 
-class CycleController extends Controller
+class ProductController extends Controller
 {
     public function index(Request $request): View
     {
-        $query = Cycle::where('is_published', true)
+        $query = Product::where('is_published', true)
             ->with('category');
 
         // Search
@@ -67,32 +67,32 @@ class CycleController extends Controller
                 break;
         }
 
-        $cycles = $query->paginate(12)->withQueryString();
+        $products = $query->paginate(12)->withQueryString();
 
         // Get filter options
         $categories = Category::all();
-        $brands = Cycle::where('is_published', true)->distinct()->pluck('brand');
+        $brands = Product::where('is_published', true)->distinct()->pluck('brand');
         $types = ['Gear', 'Non-Gear', 'Electric', 'Kids'];
 
-        return view('frontend.cycles.index', compact('cycles', 'categories', 'brands', 'types'));
+        return view('frontend.products.index', compact('products', 'categories', 'brands', 'types'));
     }
 
-    public function show(Cycle $cycle): View
+    public function show(Product $product): View
     {
-        if (!$cycle->is_published) {
+        if (!$product->is_published) {
             abort(404);
         }
 
-        $cycle->load('category');
+        $product->load('category');
         
-        // Get related cycles
-        $relatedCycles = Cycle::where('is_published', true)
-            ->where('id', '!=', $cycle->id)
-            ->where('category_id', $cycle->category_id)
+        // Get related products
+        $relatedProducts = Product::where('is_published', true)
+            ->where('id', '!=', $product->id)
+            ->where('category_id', $product->category_id)
             ->with('category')
             ->take(4)
             ->get();
 
-        return view('frontend.cycles.show', compact('cycle', 'relatedCycles'));
+        return view('frontend.products.show', compact('product', 'relatedProducts'));
     }
 }

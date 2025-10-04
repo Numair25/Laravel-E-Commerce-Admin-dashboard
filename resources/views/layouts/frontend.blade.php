@@ -5,20 +5,20 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="csrf-token" content="{{ csrf_token() }}">
 
-        <title>@yield('title', 'E-commerce - Premium Cycles & Fashions in Gulbarga, Karnataka')</title>
-        <meta name="description" content="@yield('description', 'Discover premium cycles and readymade fashions at E-commerce in Gulbarga, Karnataka. We offer a wide range of cycles and clothes for all ages.')">
+    <title>@yield('title', 'E-commerce - Premium Products & Fashions in Gulbarga, Karnataka')</title>
+    <meta name="description" content="@yield('description', 'Discover premium products and readymade fashions at E-commerce in Gulbarga, Karnataka. We offer a wide range of products and clothes for all ages.')">
 
         <!-- Open Graph Meta Tags -->
-        <meta property="og:title" content="@yield('og_title', 'E-commerce - Premium Cycles & Fashions in Gulbarga, Karnataka')">
-        <meta property="og:description" content="@yield('og_description', 'Discover premium cycles and readymade fashions at E-commerce in Gulbarga, Karnataka. We offer a wide range of cycles and clothes for all ages.')">
+    <meta property="og:title" content="@yield('og_title', 'E-commerce - Premium Products & Fashions in Gulbarga, Karnataka')">
+    <meta property="og:description" content="@yield('og_description', 'Discover premium products and readymade fashions at E-commerce in Gulbarga, Karnataka. We offer a wide range of products and clothes for all ages.')">
         <meta property="og:type" content="website">
         <meta property="og:url" content="{{ request()->url() }}">
         <meta property="og:image" content="@yield('og_image', asset('images/max-cycles-og.jpg'))">
 
         <!-- Twitter Card Meta Tags -->
         <meta name="twitter:card" content="summary_large_image">
-        <meta name="twitter:title" content="@yield('twitter_title', 'E-commerce - Premium Cycles & Fashions in Gulbarga, Karnataka')">
-        <meta name="twitter:description" content="@yield('twitter_description', 'Discover premium cycles and readymade fashions at E-commerce in Gulbarga, Karnataka.')">
+    <meta name="twitter:title" content="@yield('twitter_title', 'E-commerce - Premium Products & Fashions in Gulbarga, Karnataka')">
+    <meta name="twitter:description" content="@yield('twitter_description', 'Discover premium products and readymade fashions at E-commerce in Gulbarga, Karnataka.')">
         <meta name="twitter:image" content="@yield('twitter_image', asset('images/max-cycles-og.jpg'))">
 
         <!-- Fonts -->
@@ -47,8 +47,8 @@
                                 <a href="{{ route('home') }}" class="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">
                                     Home
                                 </a>
-                                <a href="{{ route('cycles.index') }}" class="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">
-                                    Browse Cycles
+                                <a href="{{ route('products.index') }}" class="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">
+                                    Browse Products
                                 </a>
                                 <a href="{{ route('fashions.index') }}" class="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">
                                     Browse Fashions
@@ -90,7 +90,7 @@
                 <div class="sm:hidden" id="mobile-menu">
                     <div class="pt-2 pb-3 space-y-1">
                         <a href="{{ route('home') }}" class="bg-blue-50 border-blue-500 text-blue-700 block pl-3 pr-4 py-2 border-l-4 text-base font-medium">Home</a>
-                        <a href="{{ route('cycles.index') }}" class="border-transparent text-gray-500 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700 block pl-3 pr-4 py-2 border-l-4 text-base font-medium">Browse Cycles</a>
+                        <a href="{{ route('products.index') }}" class="border-transparent text-gray-500 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700 block pl-3 pr-4 py-2 border-l-4 text-base font-medium">Browse Products</a>
                         <a href="{{ route('fashions.index') }}" class="border-transparent text-gray-500 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700 block pl-3 pr-4 py-2 border-l-4 text-base font-medium">Browse Fashions</a>
                         <a href="{{ route('about') }}" class="border-transparent text-gray-500 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700 block pl-3 pr-4 py-2 border-l-4 text-base font-medium">About Us</a>
                         <a href="{{ route('contact.index') }}" class="border-transparent text-gray-500 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700 block pl-3 pr-4 py-2 border-l-4 text-base font-medium">Contact</a>
@@ -125,8 +125,8 @@
                     <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
                         <div class="col-span-1 md:col-span-2">
                             <h3 class="text-white text-lg font-semibold mb-4">E-commerce</h3>
-                            <p class="text-gray-300 mb-4">
-                                Your trusted partner for premium cycles and readymade fashions in Gulbarga, Karnataka. We offer a wide range of cycles and clothes for all ages.
+                                <p class="text-gray-300 mb-4">
+                                    Your trusted partner for premium products and readymade fashions in Gulbarga, Karnataka. We offer a wide range of products and clothes for all ages.
                             </p>
                             <div class="text-gray-300">
                                 <p><strong>Address:</strong> Gulbarga, Karnataka, India</p>
@@ -139,7 +139,7 @@
                             <h4 class="text-white text-sm font-semibold mb-4">Quick Links</h4>
                             <ul class="space-y-2">
                                 <li><a href="{{ route('home') }}" class="text-gray-300 hover:text-white">Home</a></li>
-                                <li><a href="{{ route('cycles.index') }}" class="text-gray-300 hover:text-white">Browse Cycles</a></li>
+                                <li><a href="{{ route('products.index') }}" class="text-gray-300 hover:text-white">Browse Products</a></li>
                                 <li><a href="{{ route('fashions.index') }}" class="text-gray-300 hover:text-white">Browse Fashions</a></li>
                                 <li><a href="{{ route('about') }}" class="text-gray-300 hover:text-white">About Us</a></li>
                                 <li><a href="{{ route('contact.index') }}" class="text-gray-300 hover:text-white">Contact</a></li>
@@ -149,10 +149,10 @@
                         <div>
                             <h4 class="text-white text-sm font-semibold mb-4">Categories</h4>
                             <ul class="space-y-2">
-                                <li><a href="{{ route('cycles.index', ['type' => 'Gear']) }}" class="text-gray-300 hover:text-white">Gear Cycles</a></li>
-                                <li><a href="{{ route('cycles.index', ['type' => 'Non-Gear']) }}" class="text-gray-300 hover:text-white">Non-Gear Cycles</a></li>
-                                <li><a href="{{ route('cycles.index', ['type' => 'Electric']) }}" class="text-gray-300 hover:text-white">Electric Cycles</a></li>
-                                <li><a href="{{ route('cycles.index', ['type' => 'Kids']) }}" class="text-gray-300 hover:text-white">Kids Cycles</a></li>
+                                    <li><a href="{{ route('products.index', ['type' => 'Gear']) }}" class="text-gray-300 hover:text-white">Gear Products</a></li>
+                                    <li><a href="{{ route('products.index', ['type' => 'Non-Gear']) }}" class="text-gray-300 hover:text-white">Non-Gear Products</a></li>
+                                    <li><a href="{{ route('products.index', ['type' => 'Electric']) }}" class="text-gray-300 hover:text-white">Electric Products</a></li>
+                                    <li><a href="{{ route('products.index', ['type' => 'Kids']) }}" class="text-gray-300 hover:text-white">Kids Products</a></li>
                             </ul>
                         </div>
                     </div>

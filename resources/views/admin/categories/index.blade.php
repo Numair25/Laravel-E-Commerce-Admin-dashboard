@@ -37,7 +37,7 @@
                                                 <div class="flex items-center">
                                                     <p class="text-sm font-medium text-gray-900">{{ $category->name }}</p>
                                                     <span class="ml-2 inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-gray-100 text-gray-800">
-                                                        {{ $category->cycles_count }} cycles
+                                                        {{ $category->products_count }} products
                                                     </span>
                                                 </div>
                                                 @if($category->description)

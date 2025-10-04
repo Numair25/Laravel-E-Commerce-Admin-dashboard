@@ -25,10 +25,10 @@ class DatabaseSeeder extends Seeder
             ]
         );
 
-        // Seed categories and cycles
+        // Seed categories and products
         $this->call([
             CategorySeeder::class,
-            CycleSeeder::class,
+            ProductSeeder::class,
         ]);
     }
 }

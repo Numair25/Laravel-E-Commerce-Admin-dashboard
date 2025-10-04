@@ -15,7 +15,7 @@ class CategoryController extends Controller
      */
     public function index(): View
     {
-        $categories = Category::withCount('cycles')
+        $categories = Category::withCount('products')
             ->latest()
             ->paginate(10);
 
@@ -53,7 +53,7 @@ class CategoryController extends Controller
      */
     public function show(Category $category): View
     {
-        $category->load('cycles');
+    $category->load('products');
         return view('admin.categories.show', compact('category'));
     }
 
@@ -88,9 +88,9 @@ class CategoryController extends Controller
      */
     public function destroy(Category $category): RedirectResponse
     {
-        if ($category->cycles()->count() > 0) {
+    if ($category->products()->count() > 0) {
             return redirect()->route('admin.categories.index')
-                ->with('error', 'Cannot delete category with associated cycles.');
+        ->with('error', 'Cannot delete category with associated products.');
         }
 
         $category->delete();

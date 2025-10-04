@@ -9,7 +9,7 @@
     </url>
     
     <url>
-        <loc>{{ route('cycles.index') }}</loc>
+        <loc>{{ route('products.index') }}</loc>
         <lastmod>{{ now()->toISOString() }}</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.9</priority>
@@ -32,18 +32,18 @@
     <!-- Categories -->
     @foreach($categories as $category)
         <url>
-            <loc>{{ route('cycles.index', ['category' => $category->slug]) }}</loc>
+            <loc>{{ route('products.index', ['category' => $category->slug]) }}</loc>
             <lastmod>{{ $category->updated_at->toISOString() }}</lastmod>
             <changefreq>weekly</changefreq>
             <priority>0.8</priority>
         </url>
     @endforeach
 
-    <!-- Cycles -->
-    @foreach($cycles as $cycle)
+    <!-- Products -->
+    @foreach($products as $product)
         <url>
-            <loc>{{ route('cycles.show', $cycle) }}</loc>
-            <lastmod>{{ $cycle->updated_at->toISOString() }}</lastmod>
+            <loc>{{ route('products.show', $product) }}</loc>
+            <lastmod>{{ $product->updated_at->toISOString() }}</lastmod>
             <changefreq>weekly</changefreq>
             <priority>0.6</priority>
         </url>

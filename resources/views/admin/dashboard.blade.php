@@ -16,7 +16,7 @@
                             <div class="ml-5 w-0 flex-1">
                                 <dl>
                                     <dt class="text-sm font-medium text-gray-500 truncate">Total Products</dt>
-                                    <dd class="text-lg font-medium text-gray-900">{{ $stats['total_cycles'] }}</dd>
+                                    <dd class="text-lg font-medium text-gray-900">{{ $stats['total_products'] }}</dd>
                                 </dl>
                             </div>
                         </div>
@@ -33,8 +33,8 @@
                             </div>
                             <div class="ml-5 w-0 flex-1">
                                 <dl>
-                                    <dt class="text-sm font-medium text-gray-500 truncate">Published Cycles</dt>
-                                    <dd class="text-lg font-medium text-gray-900">{{ $stats['published_cycles'] }}</dd>
+                                    <dt class="text-sm font-medium text-gray-500 truncate">Published Products</dt>
+                                    <dd class="text-lg font-medium text-gray-900">{{ $stats['published_products'] }}</dd>
                                 </dl>
                             </div>
                         </div>
@@ -78,13 +78,13 @@
                 </div>
             </div>
 
-            <!-- Recent Cycles -->
+            <!-- Recent Products -->
             <div class="mt-8">
                 <div class="bg-white shadow rounded-lg">
                     <div class="px-4 py-5 sm:p-6">
-                        <h3 class="text-lg leading-6 font-medium text-gray-900 mb-4">Recent Cycles</h3>
+                        <h3 class="text-lg leading-6 font-medium text-gray-900 mb-4">Recent Products</h3>
 
-                        @if($recentCycles->count() > 0)
+                        @if($recentProducts->count() > 0)
                             <div class="overflow-hidden">
                                 <table class="min-w-full divide-y divide-gray-200">
                                     <thead class="bg-gray-50">
@@ -97,7 +97,7 @@
                                         </tr>
                                     </thead>
                                     <tbody class="bg-white divide-y divide-gray-200">
-                                        @foreach($recentCycles as $cycle)
+                                        @foreach($recentProducts as $cycle)
                                             <tr>
                                                 <td class="px-6 py-4 whitespace-nowrap">
                                                     <div class="text-sm font-medium text-gray-900">{{ $cycle->name }}</div>

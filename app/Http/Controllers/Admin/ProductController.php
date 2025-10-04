@@ -4,23 +4,23 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Category;
-use App\Models\Cycle;
+use App\Models\Product;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\View\View;
 
-class CycleController extends Controller
+class ProductController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index(): View
     {
-        $cycles = Cycle::with('category')
+        $products = Product::with('category')
             ->latest()
             ->paginate(10);
 
-        return view('admin.cycles.index', compact('cycles'));
+        return view('admin.products.index', compact('products'));
     }
 
     /**
@@ -32,7 +32,7 @@ class CycleController extends Controller
         $types = ['Gear', 'Non-Gear', 'Electric', 'Kids'];
         $stockStatuses = ['In Stock', 'Out of Stock'];
 
-        return view('admin.cycles.create', compact('categories', 'types', 'stockStatuses'));
+        return view('admin.products.create', compact('categories', 'types', 'stockStatuses'));
     }
 
     /**
@@ -54,43 +54,43 @@ class CycleController extends Controller
             'images.*' => 'image|mimes:jpeg,png,jpg,webp|max:2048',
         ]);
 
-        $cycle = Cycle::create($validated);
+        $product = Product::create($validated);
 
         if ($request->hasFile('images')) {
             foreach ($request->file('images') as $image) {
-                $cycle->addMedia($image)->toMediaCollection('images');
+                $product->addMedia($image)->toMediaCollection('images');
             }
         }
 
-        return redirect()->route('admin.cycles.index')
-            ->with('success', 'Cycle created successfully.');
+        return redirect()->route('admin.products.index')
+            ->with('success', 'Product created successfully.');
     }
 
     /**
      * Display the specified resource.
      */
-    public function show(Cycle $cycle): View
+    public function show(Product $product): View
     {
-        $cycle->load('category');
-        return view('admin.cycles.show', compact('cycle'));
+        $product->load('category');
+        return view('admin.products.show', compact('product'));
     }
 
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Cycle $cycle): View
+    public function edit(Product $product): View
     {
         $categories = Category::all();
         $types = ['Gear', 'Non-Gear', 'Electric', 'Kids'];
         $stockStatuses = ['In Stock', 'Out of Stock'];
 
-        return view('admin.cycles.edit', compact('cycle', 'categories', 'types', 'stockStatuses'));
+        return view('admin.products.edit', compact('product', 'categories', 'types', 'stockStatuses'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Cycle $cycle): RedirectResponse
+    public function update(Request $request, Product $product): RedirectResponse
     {
         $validated = $request->validate([
             'name' => 'required|string|max:255',
@@ -106,39 +106,39 @@ class CycleController extends Controller
             'images.*' => 'image|mimes:jpeg,png,jpg,webp|max:2048',
         ]);
 
-        $cycle->update($validated);
+        $product->update($validated);
 
         if ($request->hasFile('images')) {
             foreach ($request->file('images') as $image) {
-                $cycle->addMedia($image)->toMediaCollection('images');
+                $product->addMedia($image)->toMediaCollection('images');
             }
         }
 
-        return redirect()->route('admin.cycles.index')
-            ->with('success', 'Cycle updated successfully.');
+        return redirect()->route('admin.products.index')
+            ->with('success', 'Product updated successfully.');
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Cycle $cycle): RedirectResponse
+    public function destroy(Product $product): RedirectResponse
     {
-        $cycle->delete();
+        $product->delete();
 
-        return redirect()->route('admin.cycles.index')
-            ->with('success', 'Cycle deleted successfully.');
+        return redirect()->route('admin.products.index')
+            ->with('success', 'Product deleted successfully.');
     }
 
     /**
-     * Toggle publish status of the cycle.
+     * Toggle publish status of the product.
      */
-    public function togglePublish(Cycle $cycle): RedirectResponse
+    public function togglePublish(Product $product): RedirectResponse
     {
-        $cycle->update(['is_published' => !$cycle->is_published]);
+        $product->update(['is_published' => !$product->is_published]);
 
-        $status = $cycle->is_published ? 'published' : 'unpublished';
-        return redirect()->route('admin.cycles.index')
-            ->with('success', "Cycle {$status} successfully.");
+        $status = $product->is_published ? 'published' : 'unpublished';
+        return redirect()->route('admin.products.index')
+            ->with('success', "Product {$status} successfully.");
     }
 
     /**

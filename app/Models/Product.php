@@ -9,9 +9,11 @@ use Spatie\MediaLibrary\InteractsWithMedia;
 use Spatie\Sluggable\HasSlug;
 use Spatie\Sluggable\SlugOptions;
 
-class Cycle extends Model implements HasMedia
+class Product extends Model implements HasMedia
 {
     use InteractsWithMedia, HasSlug;
+
+    // after renaming DB table to 'products' we can use default table name
 
     protected $fillable = [
         'name',

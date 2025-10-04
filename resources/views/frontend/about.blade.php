@@ -1,6 +1,6 @@
 <x-frontend-layout>
     @section('title', 'About Us - E-commerce')
-    @section('description', 'Learn more about E-commerce, your trusted partner for premium cycles and readymade fashions in Gulbarga, Karnataka. Discover our story, mission, and commitment to quality.')
+    @section('description', 'Learn more about E-commerce, your trusted partner for premium products and readymade fashions in Gulbarga, Karnataka. Discover our story, mission, and commitment to quality.')
 
     <div class="bg-white">
         <div class="max-w-7xl mx-auto py-16 px-4 sm:py-24 sm:px-6 lg:px-8">
@@ -9,7 +9,7 @@
                     About E-commerce
                 </h1>
                 <p class="mt-4 max-w-2xl text-xl text-gray-500 lg:mx-auto">
-                    Your trusted partner for premium cycles and readymade fashions in Gulbarga, Karnataka
+                    Your trusted partner for premium products and readymade fashions in Gulbarga, Karnataka
                 </p>
             </div>
 
@@ -19,10 +19,10 @@
                         <h2 class="text-2xl font-bold text-gray-900 mb-6">Our Story</h2>
                         <div class="prose prose-lg text-gray-500">
                             <p class="mb-4">
-                                Founded with a passion for cycling and a commitment to quality, E-commerce has been serving the community of Gulbarga, Karnataka, with premium cycles and exceptional service.
+                                Founded with a passion for quality products and a commitment to service, E-commerce has been serving the community of Gulbarga, Karnataka, with premium products and exceptional service.
                             </p>
                             <p class="mb-4">
-                                We understand that choosing the right cycle is a personal decision that depends on various factors like age, purpose, terrain, and budget. That's why we offer a comprehensive range of cycles including gear, non-gear, electric, and kids cycles from trusted brands.
+                                We understand that choosing the right product is a personal decision that depends on various factors like age, purpose, terrain, and budget. That's why we offer a comprehensive range of products including gear, non-gear, electric, and kids options from trusted brands.
                             </p>
                             <p>
                                 Our team of cycling enthusiasts is here to guide you through the selection process, ensuring you find the perfect cycle that matches your needs and preferences.
@@ -53,7 +53,7 @@
                             </svg>
                         </div>
                         <h3 class="text-lg font-medium text-gray-900 mb-2">Quality Assurance</h3>
-                        <p class="text-gray-500">We offer only the highest quality cycles from trusted brands, ensuring durability, safety, and performance for all our customers.</p>
+                        <p class="text-gray-500">We offer only the highest quality products from trusted brands, ensuring durability, safety, and performance for all our customers.</p>
                     </div>
 
                     <div class="text-center">
@@ -63,7 +63,7 @@
                             </svg>
                         </div>
                         <h3 class="text-lg font-medium text-gray-900 mb-2">Expert Service</h3>
-                        <p class="text-gray-500">Our experienced team provides personalized advice and after-sales support to help you make the right choice and maintain your cycle.</p>
+                        <p class="text-gray-500">Our experienced team provides personalized advice and after-sales support to help you make the right choice and maintain your product.</p>
                     </div>
 
                     <div class="text-center">
@@ -89,7 +89,7 @@
                             </svg>
                         </div>
                         <h3 class="text-sm font-medium text-gray-900 mb-2">Wide Selection</h3>
-                        <p class="text-sm text-gray-500">From kids' cycles to electric bikes, we have something for everyone.</p>
+                        <p class="text-sm text-gray-500">From kids' products to electric bikes, we have something for everyone.</p>
                     </div>
 
                     <div class="text-center">
@@ -119,18 +119,18 @@
                             </svg>
                         </div>
                         <h3 class="text-sm font-medium text-gray-900 mb-2">Trusted Brands</h3>
-                        <p class="text-sm text-gray-500">We carry only the most reliable and trusted cycle brands.</p>
+                        <p class="text-sm text-gray-500">We carry only the most reliable and trusted product brands.</p>
                     </div>
                 </div>
             </div>
 
             <!-- Call to Action -->
             <div class="mt-24 text-center">
-                <h2 class="text-2xl font-bold text-gray-900 mb-4">Ready to Find Your Perfect Cycle?</h2>
-                <p class="text-lg text-gray-500 mb-8">Visit our store or browse our collection online to find the cycle that's right for you.</p>
+                <h2 class="text-2xl font-bold text-gray-900 mb-4">Ready to Find Your Perfect Product?</h2>
+                <p class="text-lg text-gray-500 mb-8">Visit our store or browse our collection online to find the product that's right for you.</p>
                 <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                    <a href="{{ route('cycles.index') }}" class="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700">
-                        Browse Cycles
+                    <a href="{{ route('products.index') }}" class="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700">
+                        Browse Products
                     </a>
                     <a href="{{ route('contact.index') }}" class="inline-flex items-center px-6 py-3 border border-gray-300 text-base font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50">
                         Contact Us
